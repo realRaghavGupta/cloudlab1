@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1168">
-              <caret line="131" column="47" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="47" />
+            <state relative-caret-position="403">
+              <caret line="163" column="7" lean-forward="true" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -127,14 +127,14 @@
         <option value="$PROJECT_DIR$/cloudlab1/cloudlabapp/urls.py" />
         <option value="$PROJECT_DIR$/cloudlab1/cloudlabapp/views.py" />
         <option value="$PROJECT_DIR$/cloudlab1/cloudlabapp/models.py" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/cloudlab1/cloudlab1/settings.py" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="48" />
-    <option name="y" value="23" />
+    <option name="y" value="24" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -203,15 +203,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548798509196</updated>
-      <workItem from="1548798514260" duration="8583000" />
+      <workItem from="1548798514260" duration="8922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8583000" />
+    <option name="totallyTimeSpent" value="8922000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="48" y="23" width="1440" height="877" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -324,8 +324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="131" column="47" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="47" />
+        <state relative-caret-position="403">
+          <caret line="163" column="7" lean-forward="true" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
         </state>
       </provider>
     </entry>
