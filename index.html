@@ -79,7 +79,7 @@ tr:nth-child(even) {
         dropdown3.append('<option selected="true" disabled>Choose Publishing Year</option>');
         dropdown3.prop('selectedIndex', 0);
 
-        const url = 'http://127.0.0.1:8000/Book/';
+        const url = 'http://35.182.66.251:8000/Book/';
 
 // Populate dropdown with list of provinces
         $.getJSON(url, function (data) {
@@ -98,7 +98,7 @@ tr:nth-child(even) {
        $('#records_table').empty().append(
             '<tr><td>Book Name</td><td>Author Name</td><td>Publish Year</td></tr>'
         );
-        const url = 'http://127.0.0.1:8000/Book/?book_name=' + $('#bookname-dropdown').val();
+        const url = 'http://35.182.66.251:8000/Book/?book_name=' + $('#bookname-dropdown').val();
         $.getJSON(url, function (data) {
             $.each(data, function (i, item) {
                 var $tr = $('<tr>').append(
@@ -113,7 +113,7 @@ function authorname() {
         $('#records_table').empty().append(
             '<tr><td>Book Name</td><td>Author Name</td><td>Publish Year</td></tr>'
         );
-        const url = 'http://127.0.0.1:8000/Book/?author_name=' + $('#author-dropdown').val();
+        const url = 'http://35.182.66.251:8000/Book/?author_name=' + $('#author-dropdown').val();
         $.getJSON(url, function (data) {
             $.each(data, function (i, item) {
                 var $tr = $('<tr>').append(
@@ -129,7 +129,7 @@ function publishyear() {
             '<tr><td>Book Name</td><td>Author Name</td><td>Publish Year</td></tr>'
         );
 
-        const url = 'http://127.0.0.1:8000/Book/?publish_year=' + $('#publishyear-dropdown').val();
+        const url = 'http://35.182.66.251:8000/Book/?publish_year=' + $('#publishyear-dropdown').val();
         $.getJSON(url, function (data) {
             $.each(data, function (i, item) {
                 var $tr = $('<tr>').append(
