@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<!--<script>-->
+
+    <!--$(document).ready(function() {-->
+    <!--$.ajax({-->
+        <!--url: "http://127.0.0.1:8000/Student/"-->
+    <!--}).then(function(data, status, jqxhr) {-->
+       <!--$('.greeting-id').append(data.id);-->
+       <!--$('.greeting-content').append(data.content);-->
+       <!--console.log(jqxhr);-->
+    <!--});-->
+<!--});-->
+
+
+    <!--process()-->
+    <!--{-->
+        <!--var request = new XMLHttpRequest();-->
+
+        <!--request.open('GET', 'http://127.0.0.1:8000/Student/', true);-->
+        <!--request.onload = function () {-->
+
+            <!--// Begin accessing JSON data here-->
+            <!--var data = JSON.parse(this.response);-->
+
+            <!--if (request.status >= 200 && request.status < 400) {-->
+                <!--data.forEach(student => {-->
+
+                    <!--$('.greeting-id').append(student.id);-->
+                    <!--$('.greeting-content').append(student.student_name);-->
+                    <!--// console.log(student.id);-->
+                    <!--// console.log(student.student_name);-->
+                <!--});-->
+            <!--} else {-->
+                <!--console.log('error');-->
+            <!--}-->
+        <!--}-->
+
+        <!--request.send();-->
+    <!--}-->
+<!--</script>-->
+
+<script>
+    $(document).ready(function() {
+        let dropdown1 = $('#bookname-dropdown');
+        let dropdown2 = $('#author-dropdown');
+        let dropdown3 = $('#publishyear-dropdown');
+
+        dropdown1.empty();
+        dropdown2.empty();
+        dropdown3.empty();
+
+        dropdown1.append('<option selected="true" disabled>Choose Book Name</option>');
+        dropdown1.prop('selectedIndex', 0);
+        dropdown2.append('<option selected="true" disabled>Choose Author Name</option>');
+        dropdown2.prop('selectedIndex', 0);
+        dropdown3.append('<option selected="true" disabled>Choose Publishing Year</option>');
+        dropdown3.prop('selectedIndex', 0);
+
+        const url = 'http://127.0.0.1:8000/Book/';
+
+// Populate dropdown with list of provinces
+        $.getJSON(url, function (data) {
+            $.each(data, function (key, entry) {
+                dropdown1.append($('<option></option>').attr('value', entry.abbreviation).text(entry.book_name));
+
+                dropdown2.append($('<option></option>').attr('value', entry.abbreviation).text(entry.author_name));
+                dropdown3.append($('<option></option>').attr('value', entry.abbreviation).text(entry.publish_year));
+            })
+        });
+    });
+</script>
+
+<script>
+    function bookname() {
+       $('#records_table').empty().append(
+            '<tr><td>Book Name</td><td>Author Name</td><td>Publish Year</td></tr>'
+        );
+        const url = 'http://127.0.0.1:8000/Book/?book_name=' + $('#bookname-dropdown').val();
+        $.getJSON(url, function (data) {
+            $.each(data, function (i, item) {
+                var $tr = $('<tr>').append(
+            $('<td>').text(item.book_name),
+            $('<td>').text(item.author_name),
+            $('<td>').text(item.publish_year)
+        ).appendTo('#records_table');
+            })
+        });
+}
+function authorname() {
+        $('#records_table').empty().append(
+            '<tr><td>Book Name</td><td>Author Name</td><td>Publish Year</td></tr>'
+        );
+        const url = 'http://127.0.0.1:8000/Book/?author_name=' + $('#author-dropdown').val();
+        $.getJSON(url, function (data) {
+            $.each(data, function (i, item) {
+                var $tr = $('<tr>').append(
+            $('<td>').text(item.book_name),
+            $('<td>').text(item.author_name),
+            $('<td>').text(item.publish_year)
+        ).appendTo('#records_table');
+            })
+        });
+}
+function publishyear() {
+        $('#records_table').empty().append(
+            '<tr><td>Book Name</td><td>Author Name</td><td>Publish Year</td></tr>'
+        );
+
+        const url = 'http://127.0.0.1:8000/Book/?publish_year=' + $('#publishyear-dropdown').val();
+        $.getJSON(url, function (data) {
+            $.each(data, function (i, item) {
+                var $tr = $('<tr>').append(
+            $('<td>').text(item.book_name),
+            $('<td>').text(item.author_name),
+            $('<td>').text(item.publish_year)
+        ).appendTo('#records_table');
+            })
+        });
+}
+</script>
+<body>
+ <div>
+     <!--<label>Enter id</label>-->
+     <!--<input type="text" name="id">-->
+     <!--<button onclick="process()" type="submit">Submit</button>-->
+            <!--<p class="greeting-id">The ID is </p>-->
+            <!--<p class="greeting-content">The content is </p>-->
+     <select id="bookname-dropdown" name="bookname" onchange="bookname()"></select>
+     <select id="author-dropdown" name="authorname" onchange="authorname()"></select>
+     <select id="publishyear-dropdown" name="publishyear" onchange="publishyear()"></select>
+
+     <table id="records_table">
+
+
+
+     </table>
+        </div>
+
+
+</body>
+</html>
